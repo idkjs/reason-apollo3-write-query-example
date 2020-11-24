@@ -1,0 +1,8 @@
+schema:  isLoggeIn.graphql
+# documents: 'src/**/*.graphql'
+generates:
+  isloggedin_schema.json:
+    plugins:
+      - introspection
+    config:
+      minify: true

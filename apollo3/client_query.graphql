@@ -1,0 +1,8 @@
+extend type Query {
+  getDrafts: [Post!]!
+}
+
+extend type Query {
+  isLoggedIn: Boolean!
+  cartItems: [ID!]!
+}

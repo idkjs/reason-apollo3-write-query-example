@@ -1,0 +1,37 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+""""""
+type Query {
+  """"""
+  feed: [Post!]!
+  """"""
+  drafts: [Post!]!
+  """"""
+  post(id: ID!): Post
+}
+""""""
+type Post {
+  """"""
+  id: ID!
+  """"""
+  published: Boolean!
+  """"""
+  title: String!
+  """"""
+  content: String!
+}
+""""""
+type Mutation {
+  """"""
+  createDraft(title: String!, content: String): Post
+  """"""
+  deletePost(id: ID!): Post
+  """"""
+  publish(id: ID!): Post
+}
+
+extend type Query {
+  getDrafts: [Post!]!
+}

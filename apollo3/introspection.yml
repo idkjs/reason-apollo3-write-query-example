@@ -1,0 +1,8 @@
+schema:  schema.graphql
+# documents: 'src/**/*.graphql'
+generates:
+  graphql_schema.json:
+    plugins:
+      - introspection
+    config:
+      minify: true

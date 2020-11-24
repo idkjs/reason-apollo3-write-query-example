@@ -1,0 +1,48 @@
+{
+  "name": "apollo3",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w -ws _ ",
+    "clean": "bsb -clean-world",
+    "server": "moduleserve ./ --port 8000",
+    "watch": "BS_WATCH_CLEAR=true bsb -make-world -w",
+    "format:most": "prettier --write \"**/*.{md,json,js,css,ts,tsx}\"",
+    "format:re": "find src -name \"*.re\" -or -name \"*.rei\"  | xargs bsrefmt --in-place",
+    "format": "yarn format:most && yarn format:re",
+    "schema": "npx get-graphql-schema http://localhost:4000/ -j > graphql_schema.json",
+    "gql": "npx get-graphql-schema http://localhost:4000/ > schema.graphql",
+    "apollo:codegen": "apollo client:codegen --target typescript --endpoint http://localhost:4000/graphql",
+    "generate": "graphql-codegen",
+    "generate:client": "graphql-codegen --target introspection --path",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "BuckleScript",
+    "ReasonReact",
+    "reason-react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/client": "3.2.7",
+    "bs-faker": "^2.1.0",
+    "graphql": "15.4.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "reason-apollo-client": "1.0.0-beta.1",
+    "reason-promise": "1.1.2",
+    "reason-react": "0.9.1",
+    "subscriptions-transport-ws": "0.9.18"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.19.2",
+    "@graphql-codegen/introspection": "^1.18.0",
+    "@graphql-codegen/schema-ast": "^1.18.0",
+    "@reasonml-community/graphql-ppx": "1.0.1",
+    "bs-effects": "^0.10.0",
+    "bs-free": "^0.7.0",
+    "bs-platform": "8.3.3",
+    "moduleserve": "^0.9.0"
+  }
+}

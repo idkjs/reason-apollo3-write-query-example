@@ -1,0 +1,8 @@
+schema:  http://localhost:4000
+# documents: 'src/**/*.graphql'
+generates:
+  graphql_schema.json:
+    plugins:
+      - introspection
+    config:
+      minify: true

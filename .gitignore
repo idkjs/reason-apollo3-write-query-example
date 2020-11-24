@@ -1,0 +1,11 @@
+apollo3/.graphql_ppx_cache
+apollo3/node_modules
+node_modules# Tell github to ignore rescript/bucklescript files
+.DS_Store
+.merlin
+.bsb.lock
+npm-debug.log
+/lib/bs/
+/node_modules/
+/bundleOutput/
+__tests__
